@@ -36,7 +36,9 @@ const upload = multer({
 
 // Affichage du formulaire
 app.get("/", (req, res) => {
-    res.render("form");
+    res.render("form", {
+        image: null
+    });
 });
 
 // Traitement de l'upload
