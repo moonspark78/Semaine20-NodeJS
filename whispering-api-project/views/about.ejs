@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whispering</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Whispering!</h1>
+        
+        <img src="/pexels.jpg" alt="Groupe de travail" style="max-width: 500px; border-radius: 8px;">
+
+        <section>
+            <h2>What is Whispering?</h2>
+            <p>Whispering is a microblogging platform that allows you to share your thoughts with the world and learn Node.js on the way.</p>
+        </section>
+
+        <section>
+            <h2>Community live ⚡</h2>
+            <p>Currently there are <strong><%= whispers.length %></strong> whispers available</p>
+            
+            <ul>
+                <% whispers.forEach(whisper => { %>
+                    <li><%= whisper.message %></li>
+                <% }) %>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
