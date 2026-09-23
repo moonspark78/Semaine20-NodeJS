@@ -68,6 +68,9 @@ app.post("/formulaire", (req, res) => {
     `);
 });
 
+app.get("/formulaire2", (req, res) => {
+    res.render("formulaire2");
+});
 
 app.get("/upload", (req, res) => {
     res.render("upload", {
