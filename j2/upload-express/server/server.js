@@ -73,6 +73,7 @@ app.get("/formulaire2", (req, res) => {
 });
 
 app.post("/formulaire2", (req, res) => {
+     console.log(req.body);
 });
 
 app.get("/upload", (req, res) => {
