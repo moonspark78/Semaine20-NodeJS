@@ -72,11 +72,14 @@ app.get("/formulaire2", (req, res) => {
     res.render("formulaire2");
 });
 
+app.post("/formulaire2", (req, res) => {
+});
+
 app.get("/upload", (req, res) => {
     res.render("upload", {
         image: null
     });
-});
+}); 
 
 app.post("/upload", upload.single("image"), (req, res) => {
     res.render("upload", {
