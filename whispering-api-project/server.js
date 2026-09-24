@@ -10,6 +10,13 @@ app.use(express.static('public'))
 app.use(bodyParser.json())
 
 // --- Routes API REST ---
+
+app.get('/', async (req, res) => {
+  const whispers = await store.getAll()
+  res.render('index', { whispers })
+})
+
+
 app.get('/api/v1/whisper', async (req, res) => {
   const whispers = await store.getAll()
   res.json(whispers)
