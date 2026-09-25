@@ -7,17 +7,16 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <!-- Barre de navigation supérieure -->
     <header class="navbar">
         <span class="logo">Whispering</span>
         <a href="/about" class="about-link">About</a>
     </header>
 
     <div class="main-container">
-        <!-- Bouton pour créer un murmure -->
+        
         <button class="spread-btn" onclick="createWhisper()">Spread a whisper 🗣️</button>
 
-        <!-- Liste des murmures -->
+        
         <div class="whispers-list">
             <% if (whispers.length === 0) { %>
                 <p style="text-align: center; color: #666;">No whispers yet...</p>
@@ -26,7 +25,7 @@
             <% whispers.forEach(whisper => { %>
                 <div class="whisper-card">
                     <div class="card-actions">
-                        <!-- Utilisation de data- attributes pour éviter les erreurs de syntaxe -->
+                        
                         <button class="icon-btn edit-btn" 
                                 data-id="<%= whisper.id %>" 
                                 data-message="<%= whisper.message %>" 
@@ -42,8 +41,6 @@
             <% }) %>
         </div>
     </div>
-
-    <!-- Script JavaScript -->
     <script>
         async function createWhisper() {
             const message = prompt("What's your whisper?");
