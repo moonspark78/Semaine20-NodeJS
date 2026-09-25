@@ -19,7 +19,6 @@ describe('API Whisper Routes', () => {
     expect(response.body).toHaveProperty('id')
     expect(response.body.message).toBe('Mon premier test de murmure')
 
-    // On sauvegarde l'id pour les tests suivants
     createdId = response.body.id
   })
 
@@ -39,7 +38,6 @@ describe('API Whisper Routes', () => {
 
       expect(response.status).toBe(200)
 
-      // Vérifions la mise à jour
       const checkResponse = await request(app).get(`/api/v1/whisper/${createdId}`)
       expect(checkResponse.body.message).toBe('Murmure mis à jour !')
     }

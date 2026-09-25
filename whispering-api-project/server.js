@@ -4,12 +4,11 @@ import * as store from './store.js'
 
 const app = express()
 
-// Configuration du moteur de template et des fichiers statiques
+
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(bodyParser.json())
 
-// --- Routes API REST ---
 
 app.get('/', async (req, res) => {
   const whispers = await store.getAll()
@@ -45,7 +44,9 @@ app.delete('/api/v1/whisper/:id', async (req, res) => {
   res.sendStatus(200)
 })
 
-// --- Route pour la page d'accueil / à propos (Vue EJS) ---
+
+
+
 app.get('/about', async (req, res) => {
   const whispers = await store.getAll()
   res.render('about', { whispers })
